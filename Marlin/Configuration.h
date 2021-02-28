@@ -336,7 +336,7 @@
     #define AUTO_POWER_CHAMBER_FAN
     //#define AUTO_POWER_E_TEMP        50 // (°C) Turn on PSU if any extruder is over this temperature
     //#define AUTO_POWER_CHAMBER_TEMP  30 // (°C) Turn on PSU if the chamber is over this temperature
-    #define POWER_TIMEOUT              30 // (s) Turn off power if the machine is idle for this duration
+    #define POWER_TIMEOUT              300 // (s) Turn off power if the machine is idle for this duration
     #define POWER_OFF_DELAY          120 // (s) Delay of poweroff after M81 command. Useful to let fans run for extra time.
   #endif
 #endif
@@ -732,7 +732,7 @@
 #define Z_DRIVER_TYPE  TMC2209
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
-//#define Z2_DRIVER_TYPE A4988
+#define Z2_DRIVER_TYPE TMC2209
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 #define E0_DRIVER_TYPE TMC2209
