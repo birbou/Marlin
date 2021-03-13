@@ -74,7 +74,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Birbou's Brusa SKR 1.4 Turbo 27.2.21)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Birbou's Brusa SKR 1.4 Turbo 13.3.21)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -316,7 +316,7 @@
  * Enable and connect the power supply to the PS_ON_PIN.
  * Specify whether the power supply is active HIGH or active LOW.
  */
-#define PSU_CONTROL
+//#define PSU_CONTROL
 #define PSU_NAME "Power Supply"
 
 #if ENABLED(PSU_CONTROL)
@@ -1222,11 +1222,11 @@
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS 0
+#define Y_MIN_POS -15
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
-#define Y_MAX_POS Y_BED_SIZE
-#define Z_MAX_POS 210
+#define Y_MAX_POS 205
+#define Z_MAX_POS 200
 
 /**
  * Software Endstops
@@ -1563,8 +1563,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (31)  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT (9)  // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT (35)  // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT (24)  // Y point for Z homing
 #endif
 
 // Homing speeds (mm/min)

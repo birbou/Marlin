@@ -1,6 +1,6 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * Copyright (c) 2020 MarlinFirmware [httf://github.com/MarlinFirmware/Marlin]
  *
  * Based on Sprinter and grbl.
  * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
@@ -761,7 +761,7 @@
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
   // Override with 'M422 S<index> X<pos> Y<pos>'
-  #define Z_STEPPER_ALIGN_XY { {27, 107}, {229.5, 107} }
+  #define Z_STEPPER_ALIGN_XY { {32, 107}, {243, 107} }
 
   /**
    * Orientation for the automatically-calculated probe positions.
@@ -1403,7 +1403,7 @@
    *
    * :[ 'LCD', 'ONBOARD', 'CUSTOM_CABLE' ]
    */
-  //#define SDCARD_CONNECTION LCD
+  #define SDCARD_CONNECTION ONBOARD
 
   // Enable if SD detect is rendered useless (e.g., by using an SD extender)
   //#define NO_SD_DETECT
@@ -1769,9 +1769,9 @@
  * the probe to be unable to reach any points.
  */
 #if PROBE_SELECTED && !IS_KINEMATIC
-  #define PROBING_MARGIN_LEFT 31
-  #define PROBING_MARGIN_RIGHT 15
-  #define PROBING_MARGIN_FRONT 9
+  #define PROBING_MARGIN_LEFT 32
+  #define PROBING_MARGIN_RIGHT 7
+  #define PROBING_MARGIN_FRONT 24
   #define PROBING_MARGIN_BACK 4
 #endif
 
@@ -3343,7 +3343,7 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-#define STARTUP_COMMANDS "G34"
+//#define STARTUP_COMMANDS ""
 
 /**
  * G-code Macros
