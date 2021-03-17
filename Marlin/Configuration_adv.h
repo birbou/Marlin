@@ -1252,13 +1252,13 @@
     #define PLR_ENABLED_DEFAULT   true // Power Loss Recovery enabled by default. (Set with 'M413 Sn' & M500)
     #define BACKUP_POWER_SUPPLY       // Backup power / UPS to move the steppers on power loss
     //#define POWER_LOSS_RECOVER_ZHOME  // Z homing is needed for proper recovery. 99.9% of the time this should be disabled!
-    #define POWER_LOSS_ZRAISE       2 // (mm) Z axis raise on resume (on power loss with UPS)
+    #define POWER_LOSS_ZRAISE       15 // (mm) Z axis raise on resume (on power loss with UPS)
     #define POWER_LOSS_PIN       P1_25 // Pin to detect power loss. Set to -1 to disable default pin on boards without module.
     #define POWER_LOSS_STATE     HIGH // State of pin indicating power loss
     #define POWER_LOSS_PULLUP         // Set pullup / pulldown as appropriate for your sensor
     //#define POWER_LOSS_PULLDOWN
     #define POWER_LOSS_PURGE_LEN   20 // (mm) Length of filament to purge on resume
-    #define POWER_LOSS_RETRACT_LEN 10 // (mm) Length of filament to retract on fail. Requires backup power.
+    #define POWER_LOSS_RETRACT_LEN 15 // (mm) Length of filament to retract on fail. Requires backup power.
 
     // Without a POWER_LOSS_PIN the following option helps reduce wear on the SD card,
     // especially with "vase mode" printing. Set too high and vases cannot be continued.
@@ -1403,7 +1403,7 @@
    *
    * :[ 'LCD', 'ONBOARD', 'CUSTOM_CABLE' ]
    */
-  #define SDCARD_CONNECTION ONBOARD
+  #define SDCARD_CONNECTION LCD
 
   // Enable if SD detect is rendered useless (e.g., by using an SD extender)
   //#define NO_SD_DETECT
@@ -2625,14 +2625,14 @@
    * STEALTHCHOP_(XY|Z|E) must be enabled to use HYBRID_THRESHOLD.
    * M913 X/Y/Z/E to live tune the setting
    */
-  #define HYBRID_THRESHOLD
+  //#define HYBRID_THRESHOLD
 
-  #define X_HYBRID_THRESHOLD     120  // [mm/s]
-  #define X2_HYBRID_THRESHOLD    100
-  #define Y_HYBRID_THRESHOLD     120
+  #define X_HYBRID_THRESHOLD     300  // [mm/s]
+  #define X2_HYBRID_THRESHOLD    300
+  #define Y_HYBRID_THRESHOLD     300
   #define Y2_HYBRID_THRESHOLD    100
-  #define Z_HYBRID_THRESHOLD       5
-  #define Z2_HYBRID_THRESHOLD      5
+  #define Z_HYBRID_THRESHOLD       20
+  #define Z2_HYBRID_THRESHOLD      20
   #define Z3_HYBRID_THRESHOLD      3
   #define Z4_HYBRID_THRESHOLD      3
   #define E0_HYBRID_THRESHOLD     60
@@ -2673,9 +2673,9 @@
 
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  60
+    #define X_STALL_SENSITIVITY  160
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  60
+    #define Y_STALL_SENSITIVITY  185
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY
