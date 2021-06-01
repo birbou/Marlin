@@ -441,7 +441,7 @@
  * Define one or both of these to override the default 0-255 range.
  */
 //#define FAN_MIN_PWM 50
-#define FAN_MAX_PWM 160
+#define FAN_MAX_PWM 130
 
 /**
  * FAST PWM FAN Settings
@@ -532,7 +532,7 @@
 
 // If you want endstops to stay on (by default) even when not homing
 // enable this option. Override at any time with M120, M121.
-#define ENDSTOPS_ALWAYS_ON_DEFAULT
+//#define ENDSTOPS_ALWAYS_ON_DEFAULT
 
 // @section extras
 
@@ -1321,7 +1321,7 @@
    * This feature must be enabled with "M540 S1" or from the LCD menu.
    * To have any effect, endstops must be enabled during SD printing.
    */
-  #define SD_ABORT_ON_ENDSTOP_HIT
+  //#define SD_ABORT_ON_ENDSTOP_HIT
 
   /**
    * This option makes it easier to print the same SD Card file again.
